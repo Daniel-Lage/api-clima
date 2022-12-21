@@ -5,19 +5,22 @@ import NuvemSol from "../../../assets/nuvem-sol.png";
 import Sol from "../../../assets/sol.png";
 import Item from "./Item";
 
-export default function Lista({ proximos }) {
+export default function Lista({ proximas }) {
   return (
     <View style={styles.container}>
-      {proximos.map(({ dia_semana, dia_mês, temp_maxima, temp_minima }) => (
-        <Item
-          key={dia_semana}
-          imagem={Sol}
-          dia_semana={dia_semana}
-          dia_mês={dia_mês}
-          temp_maxima={temp_maxima}
-          temp_minima={temp_minima}
-        />
-      ))}
+      {proximas.map((value, index) => {
+        const data = new Date(value.dt_txt);
+
+        return (
+          <Item
+            key={index}
+            dia_semana={data.getDay()}
+            dia_mês={data.getDate()}
+            temp_maxima={value.main.temp_max}
+            temp_minima={value.main.temp_min}
+          />
+        );
+      })}
     </View>
   );
 }

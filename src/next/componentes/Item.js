@@ -1,18 +1,25 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Item({
-  imagem,
   dia_semana,
   dia_mês,
   temp_maxima,
   temp_minima,
 }) {
+  const dias_semana = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
   return (
     <View style={styles.linha1}>
       <View style={styles.linha2}>
-        <Image source={imagem} style={styles.imagem} />
         <Text>
-          <Text style={styles.texto1}>{dia_semana},</Text>
+          <Text style={styles.texto1}>{dias_semana[dia_semana]},</Text>
           <Text style={styles.texto2}> {dia_mês}</Text>
         </Text>
       </View>

@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Subquadrado from "./Subquadrado";
 import Sol from "../../../assets/sol-branco.png";
 import Vento from "../../../assets/vento.png";
 import Termometro from "../../../assets/termometro.png";
 import Pressão from "../../../assets/pressão.png";
 
-export default function Linha({ vento, sensação, uv, pressão }) {
+export default function Linha({ vento, sensação, umidade, pressão }) {
   return (
     <View style={styles.container}>
       <Subquadrado
@@ -23,8 +23,8 @@ export default function Linha({ vento, sensação, uv, pressão }) {
       <Subquadrado
         style={styles.quadrado3}
         imagem={Sol}
-        categoria="Indice UV"
-        conteudo={uv}
+        categoria="Umidade"
+        conteudo={umidade + "%"}
       />
       <Subquadrado
         style={styles.quadrado4}

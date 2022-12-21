@@ -1,11 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Primeiro({ horário, imagem, temperatura }) {
+export default function Primeiro({ horário }) {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>{horário}</Text>
-      <Image source={imagem} style={styles.imagem} />
-      <Text style={styles.texto}>{temperatura + "°"}</Text>
+      <Text style={styles.texto}>Now</Text>
     </View>
   );
 }

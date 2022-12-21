@@ -1,10 +1,8 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-import NuvemSol from "../../../assets/nuvem-sol.png";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Quadrado({ descrição, data, temperatura }) {
   return (
     <View style={styles.quadrado}>
-      <Image source={NuvemSol} style={styles.imagem} />
       <Text style={styles.tempo}>{descrição}</Text>
       <Text style={styles.data}>{data}</Text>
       <Text style={styles.temperatura}>{temperatura}°</Text>
@@ -23,6 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   tempo: {
+    marginTop: "1vh",
     fontFamily: "Poppins-Regular",
     fontSize: 35,
     color: "#FFFFFF",
