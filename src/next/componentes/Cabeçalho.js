@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Cabeçalho() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Próximos 7 Dias</Text>
+      <Text style={styles.titulo}>Próximos 5 Dias</Text>
     </View>
   );
 }
