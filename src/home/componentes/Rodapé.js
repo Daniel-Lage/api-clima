@@ -18,7 +18,7 @@ export default function Rodapé({ proximas }) {
               <Intermediário
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[0]}
+                temperatura={proximas[0].main.temp}
               />
             );
           else
@@ -26,7 +26,7 @@ export default function Rodapé({ proximas }) {
               <Último
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[5]}
+                temperatura={proximas[5].main.temp}
               />
             );
         })}
