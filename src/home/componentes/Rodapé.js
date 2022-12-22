@@ -10,7 +10,6 @@ export default function Rodapé({ proximas }) {
       <ScrollView horizontal={true}>
         {proximas.map((value, index) => {
           const data = new Date(value.dt_txt);
-          console.log();
           if (index === 0)
             return <Primeiro key={index} horário={data.getHours()} />;
           else if (index !== proximas.length - 1)
@@ -18,7 +17,7 @@ export default function Rodapé({ proximas }) {
               <Intermediário
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[0].main.temp}
+                temperatura={value.main.temp}
               />
             );
           else
@@ -26,7 +25,7 @@ export default function Rodapé({ proximas }) {
               <Último
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[5].main.temp}
+                temperatura={value.main.temp}
               />
             );
         })}
