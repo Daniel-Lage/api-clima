@@ -30,7 +30,7 @@ export default function Linha({ vento, sensação, umidade, pressão }) {
         style={styles.quadrado4}
         imagem={Pressão}
         categoria="Pressão"
-        conteudo={pressão + " mbar"}
+        conteudo={pressão + "mbar"}
       />
     </View>
   );

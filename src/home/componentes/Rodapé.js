@@ -4,13 +4,11 @@ import Intermediário from "./Intermediário";
 import Último from "./Último";
 
 export default function Rodapé({ proximas }) {
-  console.log(proximas);
   return (
     <View style={styles.container}>
       <ScrollView horizontal={true}>
         {proximas.map((value, index) => {
           const data = new Date(value.dt_txt);
-          console.log();
           if (index === 0)
             return <Primeiro key={index} horário={data.getHours()} />;
           else if (index !== proximas.length - 1)
@@ -18,7 +16,7 @@ export default function Rodapé({ proximas }) {
               <Intermediário
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[0]}
+                temperatura={value.main.temp}
               />
             );
           else
@@ -26,7 +24,7 @@ export default function Rodapé({ proximas }) {
               <Último
                 key={index}
                 horário={data.getHours()}
-                temperatura={proximas[5]}
+                temperatura={value.main.temp}
               />
             );
         })}

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Intermediário({ horário, imagem, temperatura }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>{horário}</Text>
+      <Text style={styles.texto}>{horário}:00</Text>
       <Text style={styles.texto}>{temperatura + "°"}</Text>
     </View>
   );

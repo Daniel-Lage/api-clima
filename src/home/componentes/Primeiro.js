@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Primeiro({ horário }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>{horário}</Text>
-      <Text style={styles.texto}>Now</Text>
+      <Text style={styles.texto}>{horário}:00</Text>
+      <Text style={styles.texto}>Atual</Text>
     </View>
   );
 }

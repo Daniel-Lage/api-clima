@@ -15,6 +15,10 @@ export default function Item({
     "Sexta",
     "Sábado",
   ];
+
+  temp_maxima = Math.trunc(temp_maxima * 100) / 100;
+  temp_minima = Math.trunc(temp_minima * 100) / 100;
+
   return (
     <View style={styles.linha1}>
       <View style={styles.linha2}>

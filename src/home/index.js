@@ -8,10 +8,7 @@ import Rodapé from "./componentes/Rodapé";
 
 export default function Home({ navigation, route }) {
   const data_hoje = new Date(route.params.list[0].dt_txt);
-  const proximas = route.params.list.filter((value) => {
-    const data = new Date(value.dt_txt);
-    return data.getDate() === data_hoje.getDate();
-  });
+  const proximas = route.params.list.slice(0, 7);
 
   return (
     <View style={styles.container}>

@@ -1,6 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Quadrado({ descrição, data, temperatura }) {
+  descrição = descrição
+    .split(" ")
+    .map((value) => value.charAt(0).toUpperCase() + value.slice(1))
+    .join(" ");
+
   return (
     <View style={styles.quadrado}>
       <Text style={styles.tempo}>{descrição}</Text>

@@ -17,25 +17,32 @@ export default function App() {
   });
 
   useEffect(() => {
-    const params = new URLSearchParams({
-      lat: "-9.665220",
-      lon: "-35.735710",
-      appid: "992e27058b7770c8fcf3e3c5052ff974",
-      units: "metric",
-      lang: "pt_br",
-    });
-    fetch(
-      "https://api.openweathermap.org/data/2.5/forecast?" + params.toString()
-    )
-      .then((response) => response.json())
-      .then((value) => {
-        setDados(value);
-      });
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        const params = new URLSearchParams({
+          lat: latitude,
+          lon: longitude,
+          appid: "992e27058b7770c8fcf3e3c5052ff974",
+          units: "metric",
+          lang: "pt_br",
+        });
+        fetch(
+          "https://api.openweathermap.org/data/2.5/forecast?" +
+            params.toString()
+        )
+          .then((response) => response.json())
+          .then((value) => {
+            setDados(value);
+          });
+      }
+    );
   }, []);
 
   if (!dados) return null;
 
-  console.log(dados);
+  console.log(
+    dados.list.map((value) => [value.main.temp_min, value.main.temp_max])
+  );
 
   return (
     <NavigationContainer>

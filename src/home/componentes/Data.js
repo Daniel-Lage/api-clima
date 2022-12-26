@@ -11,7 +11,7 @@ export default function Data({ onPress }) {
         onPress={onPress}
         style={{ flexDirection: "row", alignItems: "center" }}
       >
-        <Text style={styles.texto2}>Próximos 7 Dias</Text>
+        <Text style={styles.texto2}>Próximos 5 Dias</Text>
         <Entypo
           name="chevron-right"
           size={25}

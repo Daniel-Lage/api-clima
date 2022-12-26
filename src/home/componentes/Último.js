@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Último({ horário, temperatura }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>{horário}</Text>
+      <Text style={styles.texto}>{horário}:00</Text>
       <Text style={styles.texto}>{temperatura + "°"}</Text>
     </View>
   );
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     border: "1px solid #999999",
     alignItems: "center",
     justifyContent: "space-evenly",
-    marginRight: "5vw",
+    marginRight: "3vw",
     marginTop: "1vh",
   },
   texto: {

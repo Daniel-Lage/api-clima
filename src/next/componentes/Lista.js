@@ -10,16 +10,26 @@ export default function Lista({ proximas }) {
     <View style={styles.container}>
       {proximas.map((value, index) => {
         const data = new Date(value.dt_txt);
-
-        return (
-          <Item
-            key={index}
-            dia_semana={data.getDay()}
-            dia_mês={data.getDate()}
-            temp_maxima={value.main.temp_max}
-            temp_minima={value.main.temp_min}
-          />
-        );
+        if (value.main.temp_max !== value.main.temp_min)
+          return (
+            <Item
+              key={index}
+              dia_semana={data.getDay()}
+              dia_mês={data.getDate()}
+              temp_maxima={value.main.temp_max}
+              temp_minima={value.main.temp_min}
+            />
+          );
+        else
+          return (
+            <Item
+              key={index}
+              dia_semana={data.getDay()}
+              dia_mês={data.getDate()}
+              temp_maxima={value.main.temp + 0.675}
+              temp_minima={value.main.temp - 0.675}
+            />
+          );
       })}
     </View>
   );
