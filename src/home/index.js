@@ -19,9 +19,7 @@ export default function Home({ navigation, route }) {
       />
       <Quadrado
         descrição={route.params.list[0].weather[0].description}
-        data={`${data_hoje.getDate()}/${
-          data_hoje.getMonth() + 1
-        }/${data_hoje.getFullYear()}`}
+        data={data_hoje}
         temperatura={route.params.list[0].main.temp}
       />
       <Linha

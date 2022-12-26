@@ -53,7 +53,7 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ title: "Home Screen" }}
+          options={{ title: "Tela Principal" }}
           initialParams={dados}
         />
         <Stack.Screen

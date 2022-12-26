@@ -6,10 +6,37 @@ export default function Quadrado({ descrição, data, temperatura }) {
     .map((value) => value.charAt(0).toUpperCase() + value.slice(1))
     .join(" ");
 
+  const dias_semana = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
+  const meses = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ];
+
   return (
     <View style={styles.quadrado}>
       <Text style={styles.tempo}>{descrição}</Text>
-      <Text style={styles.data}>{data}</Text>
+      <Text style={styles.data}>
+        {dias_semana[data.getDay()]}, {data.getDate()} de{" "}
+        {meses[data.getMonth()]}
+      </Text>
       <Text style={styles.temperatura}>{temperatura}°</Text>
     </View>
   );

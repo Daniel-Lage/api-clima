@@ -1,11 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Item({
-  dia_semana,
-  dia_mês,
-  temp_maxima,
-  temp_minima,
-}) {
+export default function Item({ data, temp_maxima, temp_minima }) {
   const dias_semana = [
     "Domingo",
     "Segunda",
@@ -15,6 +10,20 @@ export default function Item({
     "Sexta",
     "Sábado",
   ];
+  const meses = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ];
 
   temp_maxima = Math.trunc(temp_maxima * 100) / 100;
   temp_minima = Math.trunc(temp_minima * 100) / 100;
@@ -23,8 +32,11 @@ export default function Item({
     <View style={styles.linha1}>
       <View style={styles.linha2}>
         <Text>
-          <Text style={styles.texto1}>{dias_semana[dia_semana]},</Text>
-          <Text style={styles.texto2}> {dia_mês}</Text>
+          <Text style={styles.texto1}>{dias_semana[data.getDay()]},</Text>
+          <Text style={styles.texto2}>
+            {" "}
+            {data.getDate()} de {meses[data.getMonth()]}
+          </Text>
         </Text>
       </View>
       <Text>

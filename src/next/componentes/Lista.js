@@ -14,8 +14,7 @@ export default function Lista({ proximas }) {
           return (
             <Item
               key={index}
-              dia_semana={data.getDay()}
-              dia_mês={data.getDate()}
+              data={data}
               temp_maxima={value.main.temp_max}
               temp_minima={value.main.temp_min}
             />
@@ -24,8 +23,7 @@ export default function Lista({ proximas }) {
           return (
             <Item
               key={index}
-              dia_semana={data.getDay()}
-              dia_mês={data.getDate()}
+              data={data}
               temp_maxima={value.main.temp + 0.675}
               temp_minima={value.main.temp - 0.675}
             />
